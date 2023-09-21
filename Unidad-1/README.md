@@ -5,6 +5,7 @@
 -[Ejercicio 1](#ejercicio1)  
 -[Ejercicio 2](#ejercicio2)  
 -[Ejercicio 3](#ejercicio3)  
+-[Ejercicio 4](#ejercicio4)
 
 ## Ejercicio 1 <a name="ejercicio1"></a>
 Desarrolle un algoritmo que permita leer dos valores distintos, determinar cual de los dos valores es el
@@ -80,5 +81,25 @@ es decir, 1 + 2 + 3 + .... + 10.
  - Escribir Suma
  - De lo contrario, Repetir desde el paso 3
  - Fin_Si
- - Fin             
+ - Fin  
+
+ ## Ejercicio 4 <a name="ejercicio4"></a>    
+ Determinar la hipotenusa de un triángulo rectángulo conocidas las longitudes de sus dos catetos.
+Desarrolle el algoritmo correspondiente.
+
+### Diagrama de flujo
+<img src="images/diagrama-flujo-4.png"/>
+
+### Pseudocódigo
+ **Pasos:**
+ - Inicio
+ - Declaración de Variables: ***CatA= 0,
+CatB=0***
+ - Leer el valor de cada cateto
+ - Almacenarlo en la variable **CatA y
+CatB**
+ - Calcular el valor de Hip con la
+formula indicada
+ - Escribir el valor de la Hipotenusa
+ - Fin 
 </div>
