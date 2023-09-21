@@ -70,13 +70,13 @@ es decir, 1 + 2 + 3 + .... + 10.
 
  **Pasos:**
  - Inicio
- - Declaración de variables:
-    N= 0. Suma=0
- - Asignación Contador :
-    N= N + 1
- - Asignación Acumulador:
-    Suma = Suma + N
- - Si N = 10 Entonces
+ - Declaración de variables:  
+    ***N= 0. Suma=0***
+ - Asignación Contador :  
+    **N= N + 1**
+ - Asignación Acumulador:  
+    **Suma = Suma + N**
+ - Si **N = 10** Entonces
  - Escribir Suma
  - De lo contrario, Repetir desde el paso 3
  - Fin_Si
