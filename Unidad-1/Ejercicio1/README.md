@@ -3,7 +3,7 @@ Desarrolle un algoritmo que permita leer dos valores distintos, determinar cual 
 mayor y escribirlo.
 
 ### Diagrama de flujo
-<img src="images/diagrama-flujo.png"/>  
+<img src="src/images/diagrama-flujo.png"/>  
 
 ### Pseudocódigo
 
