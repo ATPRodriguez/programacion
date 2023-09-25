@@ -33,14 +33,10 @@ public class Main {
 
         //Bloque 3: Verifica si A > B
         if (valorA > valorB){
+            //Bloque 4: Muestra por pantalla el valor mayor
             System.out.println("El valor de A es mayor");
         } else {
             System.out.println("El valor de B es mayor");
         }
-
-
-
-        //Bloque 4: Muestra por pantalla el valor mayor
-
     }
 }
