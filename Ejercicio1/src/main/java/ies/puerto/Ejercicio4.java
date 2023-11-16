@@ -74,7 +74,8 @@ public class Ejercicio4 {
      * @return saldo actualizado
      */
     public double depositar(double saldoDepositado) {
-        this.saldo += saldoDepositado;
+        if (saldoDepositado > 0)
+            this.saldo += saldoDepositado;
         return this.saldo;
     }
 
@@ -84,7 +85,8 @@ public class Ejercicio4 {
      * @return saldo acrtualizado
      */
     public double retirar (double saldoRetirado) {
-        this.saldo -= saldoRetirado;
+        if (saldoRetirado > 0)
+            this.saldo -= saldoRetirado;
         return this.saldo;
     }
 

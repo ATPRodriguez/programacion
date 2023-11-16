@@ -19,12 +19,12 @@ public class Ejercicio3 {
      * @return Clasificacion del estudiante segun su calificacion
      */
     public String notasIfElse(float calificacion){
-        if (calificacion < 0f) {
-            calificacion = 0f;
-        } else if (calificacion > 10f) {
-            calificacion = 10f;
-
+        if (calificacion < 0) {
+            calificacion = 0;
+        } else if (calificacion > 10) {
+            calificacion = 10;
         }
+
         if (calificacion < 5){
             return "Suspenso";
         } else if (calificacion < 6) {
@@ -45,19 +45,18 @@ public class Ejercicio3 {
      * @param calificacion del estudiante
      * @return Clasificacion del estudiante segun su calificacion
      */
-    public String notasSwitch (int calificacion){
+    public String notasSwitch (float calificacion){
         if (calificacion < 0) {
             calificacion = 0;
         } else if (calificacion > 10) {
             calificacion = 10;
         }
-        switch (calificacion) {
+        switch ((int)calificacion) {
             case 5:
                 return "Aprobado";
             case 6:
                 return "Bien";
             case 7:
-                return "Notable";
             case 8:
                 return  "Notable";
             case 9:
