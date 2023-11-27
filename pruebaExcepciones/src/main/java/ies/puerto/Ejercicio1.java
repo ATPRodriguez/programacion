@@ -13,8 +13,6 @@ public class Ejercicio1 {
         int numero2 = solicitarNumero();
         int resultado = division(numero1,numero2);
         System.out.println("Resultado de la division:"+resultado);
-
-
     }
 
     /**
