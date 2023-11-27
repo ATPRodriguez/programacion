@@ -1,5 +1,7 @@
 package ies.puerto;
 
+import java.rmi.server.Operation;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -9,17 +11,24 @@ import java.util.Scanner;
  */
 public class Ejercicio5 {
     public static void main(String[] args) {
-        String operacion = solicitarOperacion();
-
+        int operacion = solicitarOperacion();
     }
 
     /**
      * Funcion que pide por teclado una operacion
      * @return operacion obtenida
      */
-    public static String solicitarOperacion (){
+    public static int solicitarOperacion (){
         Scanner lectura = new Scanner(System.in);
-        System.out.println("Introduzca un valor");
-        return lectura.nextLine();
+        int operacion = 0;
+        try {
+            System.out.println("Introduzca un valor");
+            operacion = lectura.nextInt();
+        } catch (InputMismatchException inputMismatchException) {
+            System.out.println("Se ha producido un inputMismatchException");
+        } finally {
+            lectura.close();
+        }
+        return operacion;
     }
 }

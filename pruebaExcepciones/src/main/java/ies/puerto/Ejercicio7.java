@@ -7,23 +7,27 @@ import java.util.Scanner;
  * @author ATPRodriguez
  */
 public class Ejercicio7 {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws NumeroNegativoException {
         int numero = solicitarNumero();
-        try {
-            if (numero < 0) ;
-        } catch (IllegalArgumentException exception) {
-            throw new Exception("Se ha entregado un numero negativo");
+        if (esPositivo(numero)) {
+            System.out.println("El numero " + numero + ", es positivo");
         }
     }
 
     /**
      * Funcion que pide por teclado un numero
-     *
      * @return numero obtenido
      */
     public static int solicitarNumero() {
         Scanner lectura = new Scanner(System.in);
-        System.out.println("Introduzca un valor");
+        System.out.print("Introduzca un valor ");
         return lectura.nextInt();
+    }
+
+    public static boolean esPositivo(int numero) throws NumeroNegativoException{
+        if (numero < 0) {
+            throw new NumeroNegativoException("El numero " + numero + " es negativo");
+        }
+        return true;
     }
 }

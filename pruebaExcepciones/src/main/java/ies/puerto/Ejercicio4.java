@@ -10,11 +10,12 @@ import java.util.Locale;
  */
 public class Ejercicio4 {
     public static void main(String[] args) throws Exception {
-        String string = "";
+        String vacio = null;
         try {
-            string.getBytes();
+            int tamanioTexto = vacio.length();
+            System.out.println("La longitud del string es: " + tamanioTexto);
         } catch (NullPointerException exception) {
-            throw new Exception("Se ha producido un NullPointerException");
+            System.out.println("Se ha producido un NullPointerException");
         }
     }
 }

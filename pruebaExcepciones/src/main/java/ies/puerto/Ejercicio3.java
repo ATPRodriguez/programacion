@@ -9,9 +9,9 @@ public class Ejercicio3 {
     public static void main(String[] args) throws Exception {
         int[] array = new int[3];
         try {
-            array[4] = 5;
+            int cuartoElemento = array[3];
         } catch (ArrayIndexOutOfBoundsException exception) {
-            throw new Exception("Se ha intentado acceder a una posicion fuera de los limites del array");
+            System.out.println("Se ha intentado acceder a una posicion fuera de los limites del array");
         }
     }
 }

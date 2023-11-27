@@ -1,6 +1,7 @@
 package ies.puerto;
 
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -12,25 +13,27 @@ import java.util.Scanner;
  */
 public class Ejercicio6 {
     public static void main(String[] args) throws Exception {
-        String fecha = solicitarFecha();
-        transformarAFecha(fecha);
+        String fechaString = solicitarFecha();
+        transformarAFecha(fechaString);
     }
 
     /**
      * Funcion que pide por teclado una fecha
      * @return fecha obtenida
      */
-    public static String solicitarFecha (){
+    public static String solicitarFecha() {
         Scanner lectura = new Scanner(System.in);
         System.out.println("Introduzca una fecha");
         return lectura.nextLine();
     }
 
-    public static void transformarAFecha (String fecha) throws Exception {
-        /**try {
-           String resultado = Date.parse(fecha);
+    public static void transformarAFecha (String fechaString) {
+        Date resultado = null;
+        SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+        try {
+            resultado = formato.parse(fechaString);
         } catch (ParseException exception) {
-            throw new Exception ("No se ha podido hacer el Parse");
-        }*/
+            System.out.println("Estoy capturando un error porque tengo una fecha incorrecta");
+        }
     }
 }
