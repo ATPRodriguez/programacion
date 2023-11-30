@@ -1,5 +1,6 @@
 package ies.puerto;
 
+import java.util.Scanner;
 
 /**
  * Crea una excepción personalizada llamada NombreInvalidoException que se lance cuando un método reciba
@@ -8,14 +9,12 @@ package ies.puerto;
  * @author ATPRodriguez
  */
 public class Ejercicio10 {
-    public static void main(String[] args) throws InvalidNameException {
-        boolean condition = true;
-        nombre(condition);
-    }
-
-    public static void nombre(boolean condition) throws InvalidNameException {
-        if (condition){
-            throw new InvalidNameException(1, "InvalidNameException shows a message");
+    public static void main(String[] args) throws NombreInvalidoException {
+        String nombre = null;
+        Scanner lectura = new Scanner(System.in);
+        nombre = lectura.nextLine();
+        if (nombre.isEmpty()) {
+            throw new NombreInvalidoException("No se ha escrito nada");
         }
     }
 }
