@@ -9,9 +9,9 @@ public class Ejercicio10 {
     public static void main(String[] args) {
         Calendar calendario1 = Calendar.getInstance();
         if (verificarSabDom(calendario1)) {
-            System.out.println("Hoy es Sabado o Domingo");
+            System.out.println("Hoy es fin de seman");
         } else {
-            System.out.println("Hoy no es Sabado o Domingo");
+            System.out.println("Hoy no es fin de semana");
         }
     }
 
