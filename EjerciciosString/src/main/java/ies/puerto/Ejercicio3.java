@@ -6,7 +6,7 @@ package ies.puerto;
  */
 public class Ejercicio3 {
     public static void main(String[] args) {
-        String cadena = "En un lugar de la mancha";
+        String cadena = "En un lugar de La Mancha";
         char[] vocales = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'};
         int contador = 0;
         for (int i = 0; i < cadena.length(); i++) {

@@ -6,8 +6,8 @@ package ies.puerto;
  */
 public class Ejercicio2 {
     public static void main(String[] args) {
-        String cadena1 = "dou";
-        String cadena2 = "pou";
+        String cadena1 = "En un lugar de La Mancha";
+        String cadena2 = "En un pais multicolor";
         if (cadena1.equals(cadena2)) {
             System.out.println("Son iguales");
         } else {

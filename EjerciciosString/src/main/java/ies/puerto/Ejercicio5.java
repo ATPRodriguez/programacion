@@ -6,8 +6,8 @@ package ies.puerto;
  */
 public class Ejercicio5 {
     public static void main(String[] args) {
-        String cadena = "Omniscient Readers Viewpoint";
-        char letra = 'e';
+        String cadena = "En un lugar de La Mancha";
+        char letra = 'n';
         String cadena2 = "";
 
         for (int i = 0; i < cadena.length(); i++) {

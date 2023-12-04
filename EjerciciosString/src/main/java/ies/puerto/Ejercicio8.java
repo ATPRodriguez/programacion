@@ -8,8 +8,8 @@ import java.util.Locale;
  */
 public class Ejercicio8 {
     public static void main(String[] args) {
-        String cadena1 = "Omniscient Reader";
-        String cadena2 = "The Legend of the Galactic Hero";
+        String cadena1 = "En un lugar de La Mancha";
+        String cadena2 = "En un pais multicolor";
         System.out.println(cadena1);
         System.out.println(cadena2);
         cadena1 = cadena1.toUpperCase();

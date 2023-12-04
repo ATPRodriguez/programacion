@@ -6,7 +6,7 @@ package ies.puerto;
  */
 public class Ejercicio4 {
     public static void main(String[] args) {
-        String cadena1 = "Omniscient Readers Viewpoint";
+        String cadena1 = "En un lugar de La Mancha";
         String cadena2 = "";
 
         for (int i = cadena1.length()-1; i >= 0; i--) {

@@ -6,7 +6,7 @@ package ies.puerto;
  */
 public class Ejercicio7 {
     public static void main(String[] args) {
-        String frase = "        Omniscient Reader            ";
+        String frase = "        En un lugar de La Mancha            ";
         frase = frase.trim();
         System.out.println(frase);
     }
