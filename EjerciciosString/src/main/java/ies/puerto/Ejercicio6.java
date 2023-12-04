@@ -9,15 +9,22 @@ import java.util.Scanner;
 public class Ejercicio6 {
     public static void main(String[] args) {
         Scanner lectura = new Scanner(System.in);
+
+        System.out.println("Inserte una frase");
         String frase = lectura.nextLine();
-        int inicio = 0;
-        int contador = 0;
-        frase = frase.trim();
+        String palabraActual = "";
+
         for (int i = 0; i < frase.length(); i++) {
-            if (frase.charAt(i) != ' ') {
-                contador++;
-            } else {
-                System.out.println(frase.substring(inicio, contador));
+            char caracterActual = frase.charAt(i);
+
+            if (caracterActual != ' ') {
+                palabraActual += caracterActual;
+            } else if (!palabraActual.isEmpty()) {
+                System.out.println(palabraActual);
+                palabraActual = "";
+            }
+            if (!palabraActual.isEmpty()) {
+                System.out.println(palabraActual);
             }
         }
     }
