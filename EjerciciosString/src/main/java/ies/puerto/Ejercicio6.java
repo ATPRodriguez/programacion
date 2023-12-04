@@ -23,9 +23,9 @@ public class Ejercicio6 {
                 System.out.println(palabraActual);
                 palabraActual = "";
             }
-            if (!palabraActual.isEmpty()) {
-                System.out.println(palabraActual);
-            }
+        }
+        if (!palabraActual.isEmpty()) {
+            System.out.println(palabraActual);
         }
     }
 }
