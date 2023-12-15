@@ -16,24 +16,39 @@ public class Ejercicio1 {
             throw new IllegalArgumentException("EL valor no puede ser inferior a 4");
         }
         escribirTriangulo(crearTriangulo(columnas));
+        escribirTriangulo(crearTrianguloInverso(columnas));
+        escribirTriangulo(crearTriangulo(columnas));
     }
 
     /**
      * Metodo que crea el triangulo invertido
-     * @param columnas del triangulo
+     * @param filas del triangulo
      * @return triangulo
      */
-    public static String[][] crearTriangulo(int columnas) {
-        if (columnas % 2 == 0) {
-            columnas += 1;
-        }
-        String[][] triangulo = new String[columnas + 1][columnas];
-        int limiteDerecho = triangulo.length - 1;
-        for (int i = 0; i < triangulo.length; i++) {
-            for (int j = i; j < limiteDerecho; j++){
-                triangulo[i][j] = ""+1;
+    public static String[][] crearTrianguloInverso(int filas) {
+        String[][] triangulo = new String[filas - 1][filas + filas - 1];
+        int limiteDerecho = filas + filas - 1;
+        int limiteIzquierdo = 0;
+        for (int i = 0; i <= filas; i++) {
+            for (int j = limiteIzquierdo + 1; j < limiteDerecho -1; j++) {
+                triangulo[i][j] = "" + 1;
             }
             limiteDerecho--;
+            limiteIzquierdo++;
+        }
+        return triangulo;
+    }
+
+    public static String[][] crearTriangulo(int filas) {
+        String[][] triangulo = new String[filas][filas + filas - 1];
+        int limiteDerecho = filas + filas - 1;
+        int limiteIzquierdo = 0;
+        for (int i = filas -1 ; i >= 0; i--) {
+            for (int j = limiteIzquierdo; j < limiteDerecho; j++) {
+                triangulo[i][j] = "" + 1;
+            }
+            limiteDerecho--;
+            limiteIzquierdo++;
         }
         return triangulo;
     }
@@ -43,7 +58,7 @@ public class Ejercicio1 {
      * @param triangulo a escribir
      */
     public static void escribirTriangulo (String[][] triangulo) {
-        for (int i = 0; i < triangulo.length / 2; i++){
+        for (int i = 0; i < triangulo.length; i++) {
             for (int j = 0; j < triangulo[i].length; j++) {
                 if (triangulo[i][j] == null)
                     triangulo[i][j] = " ";
