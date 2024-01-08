@@ -7,9 +7,9 @@ public class Ejercicio1Test {
 
     @Test
     public void busquedaBinariaTestOk () {
-        int resultadoOk = 1;
+        int resultadoOk = 4;
         int[] array = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        int resultado = ejercicio1.busquedaBinaria(array, 1);
+        int resultado = ejercicio1.busquedaBinaria(array, 4);
         Assertions.assertEquals(resultadoOk, resultado, "No es el resultado esperado");
     }
 

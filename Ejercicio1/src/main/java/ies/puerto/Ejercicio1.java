@@ -26,7 +26,6 @@ public class Ejercicio1 {
      * @return posicion del elemento
      */
     public int busquedaBinaria (int[] array, int elemento){
-        Arrays.sort(array);
         boolean encontrado = false;
         int inicio = 0;
         int fin = array.length-1;

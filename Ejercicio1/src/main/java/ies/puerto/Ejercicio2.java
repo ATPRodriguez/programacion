@@ -34,7 +34,6 @@ public class Ejercicio2 {
                     swapped = true;
                 }
             }
-                apoyo = apoyo - 1;
         } while (swapped);
         return array;
     }
