@@ -1,9 +1,11 @@
 package ies.puerto;
 
+import ies.puerto.excepciones.ValidacionException;
+
 public class Conductor extends Persona{
     public Conductor () {}
 
-    public Conductor (String nombre, int edad, String dni) {
+    public Conductor (String nombre, int edad, String dni) throws ValidacionException {
         super(nombre, edad, dni);
     }
 

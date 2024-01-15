@@ -1,12 +1,16 @@
 package ies.puerto;
 
+import ies.puerto.excepciones.ValidacionException;
+
 public class AppVehiculo {
     static Vehiculo vehiculo = new Vehiculo("Seat", "Ibiza", 18630f);
-    static Conductor conductor = new Conductor("Pepe", 20, "12345678M");
+    static Conductor conductor;
     static Coche coche = new Coche("Renault", "Clio", 17000f, "1234BCD", conductor);
     static Motocicleta motocicleta = new Motocicleta("Kawazaki", "Z800", 24800f, "5678KTD", conductor);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ValidacionException {
+        conductor = new Conductor("Pepe", 20, "12345678M");
+
         System.out.println("Soy un vehiculo " + vehiculo.toString());
         System.out.println();
 

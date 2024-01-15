@@ -2,10 +2,6 @@ package ies.puerto;
 
 import ies.puerto.excepciones.ValidacionException;
 
-/**
- * Programa main para probar los constructores y metodos de la clase Persona y Alumno
- * @author ATPRodriguez
- */
 public class AppAlumno {
     static Persona persona;
     static Alumno alumno;

@@ -2,10 +2,6 @@ package ies.puerto;
 
 import ies.puerto.excepciones.ValidacionException;
 
-/**
- * Crea una clase Alumno que haga uso (extends) de la clase Alumno.
- * @author ATPRodriguez
- */
 public class Alumno extends Persona {
     public Alumno () {}
 
