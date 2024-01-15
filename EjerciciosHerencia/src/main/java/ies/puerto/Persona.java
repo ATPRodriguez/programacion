@@ -49,11 +49,11 @@ public class Persona {
         return dni;
     }
 
-    public void setDni(String dni) {
+    public void setDni(String dni) throws ValidacionException {
         if (autenticacion.validarDni(dni))
             this.dni = dni;
         else
-            System.out.println("Dni no valido, no se ha podido hacer set");
+            throw new ValidacionException("Dni no es valido");
     }
 
     public String saludar() {

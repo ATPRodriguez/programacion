@@ -8,26 +8,13 @@ import ies.puerto.excepciones.ValidacionException;
  */
 public class AppAlumno {
     static Persona persona;
-
-    static {
-        try {
-            persona = new Persona("Pepe", 35, "12345678M");
-        } catch (ValidacionException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     static Alumno alumno;
 
-    static {
-        try {
-            alumno = new Alumno("Pedro", 23, "87654321G");
-        } catch (ValidacionException e) {
-            throw new RuntimeException(e);
-        }
-    }
+    public static void main(String[] args) throws ValidacionException {
+        alumno = new Alumno("Pedro", 23, "87654321G");
+        persona = new Persona("Pepe", 35, "12345678M");
 
-    public static void main(String[] args) {
+
         System.out.println(persona.toString());
         persona.setNombre("Jesus");
         persona.setEdad(40);
