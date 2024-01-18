@@ -10,8 +10,4 @@ public class Cuadrado extends RegularesAbstract implements IFormaGeometrica {
         super(base, altura);
     }
 
-    @Override
-    public float calcularArea() {
-        return getAltura() * getBase();
-    }
 }
