@@ -1,19 +1,20 @@
 package ies.puerto.impl;
 
-import ies.puerto.interfaz.IConductor;
+import ies.puerto.abstrac.ConductorAbstract;
 
-public class Automovil implements IConductor {
+public class Automovil extends ConductorAbstract {
+
     @Override
     public String arrancar() {
-        return "Arrancando Automovil...";
+        return "Arrancando Automovil";
     }
 
     @Override
     public String detener() {
-        return "Deteniendo Automovil...";
+        return "Deteniendo Automovil";
     }
 
     public String conducir() {
-        return "Conduciendo...";
+        return "Conduciendo Automovil";
     }
 }
