@@ -23,7 +23,7 @@ public class Profesor extends EmpleadoAbstract {
     @Override
     public String toString() {
         try {
-            return "Soy " + getNombre() + ", tengo " + super.anios() +  "anios, trabajo de profesor, mi especialidad es "
+            return "Soy " + getNombre() + ", tengo " + super.anios() +  " anios, trabajo de profesor de "
                     + especialidad + " y tengo un salario de " + calcularSalario() + " euros" ;
         } catch (ParseException e) {
             throw new RuntimeException("La fecha de nacimiento no tiene el formato dd/MM/yyyy");

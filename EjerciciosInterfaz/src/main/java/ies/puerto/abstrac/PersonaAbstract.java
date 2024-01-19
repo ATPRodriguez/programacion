@@ -37,7 +37,7 @@ public abstract class PersonaAbstract {
         Date fechaActual = new Date();
         fechaActual = formato.parse(formato.format(fechaActual));
         Date nacimiento = formato.parse(fechaNacimiento);
-
-        return (int)(Math.abs(fechaActual.getTime() - nacimiento.getTime()) / (1000 * 60 * 60 * 24));
+        long diferencia = (nacimiento.getTime() - fechaActual.getTime()) / (1000L*60*60*24*365);
+        return Math.abs((int) diferencia);
     }
 }
