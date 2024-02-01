@@ -13,7 +13,6 @@ public class Coche extends Vehiculo {
 
     public Coche(String marca, String modelo, String matricula, int velocidad) {
         super(marca, modelo, matricula, velocidad);
-        velocidadMaxima();
     }
 
     public int velocidadMaxima() {

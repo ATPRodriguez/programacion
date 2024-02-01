@@ -81,16 +81,14 @@ public class Concesionario {
         if (coches.contains(coche)) {
             return false;
         }
-        coches.add(coche);
-        return true;
+        return coches.add(coche);
     }
 
     public boolean removeCoche (Coche coche) {
         if (!coches.contains(coche)) {
             return false;
         }
-        coches.remove(coche);
-        return true;
+        return coches.remove(coche);
     }
 
     public Coche obtenerCoche (String matricula) {
@@ -122,5 +120,13 @@ public class Concesionario {
 
     public float velocidadMediaVehiculos () {
         return velocidadMediaCoches() + velocidadMediaMotocicletas();
+    }
+
+    @Override
+    public String toString() {
+        return "Concesionario" +
+                "\nCoches:" + coches +
+                "\nMotocicletas: " + motocicletas +
+                '}';
     }
 }

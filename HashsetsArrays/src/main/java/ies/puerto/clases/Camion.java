@@ -2,16 +2,16 @@ package ies.puerto.clases;
 
 import ies.puerto.abstractas.Vehiculo;
 
-public class Motocicleta extends Vehiculo {
-    public Motocicleta() {
+public class Camion extends Vehiculo {
+    public Camion() {
         super();
     }
 
-    public Motocicleta(String matricula) {
+    public Camion(String matricula) {
         super(matricula);
     }
 
-    public Motocicleta(String marca, String modelo, String matricula, int velocidad) {
+    public Camion(String marca, String modelo, String matricula, int velocidad) {
         super(marca, modelo, matricula, velocidad);
     }
 

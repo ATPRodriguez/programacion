@@ -4,18 +4,19 @@ import ies.puerto.clases.Coche;
 import ies.puerto.clases.Concesionario;
 import ies.puerto.clases.Motocicleta;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
 public class AppConcesionario {
     static Concesionario concesionario;
-    HashSet<Coche> coches;
+    static HashSet<Coche> coches;
     static Coche coche1;
     static Coche coche2;
     static Coche coche3;
     static Coche coche4;
     static Coche coche5;
-    List<Motocicleta> motocicletas;
+    static List<Motocicleta> motocicletas;
     static Motocicleta motocicleta1;
     static Motocicleta motocicleta2;
     static Motocicleta motocicleta3;
@@ -37,6 +38,40 @@ public class AppConcesionario {
         motocicleta4 = new Motocicleta("Suzuki","GSX-R750","VWX234",80);
         motocicleta5 = new Motocicleta("Kawasaki","Ninja","ZAB567",85);
 
+        coches = new HashSet<>();
+        coches.add(coche1);
+        coches.add(coche2);
+        coches.add(coche3);
+        coches.add(coche4);
+        coches.add(coche5);
+
+        motocicletas = new ArrayList<>();
+        motocicletas.add(motocicleta1);
+        motocicletas.add(motocicleta2);
+        motocicletas.add(motocicleta3);
+        motocicletas.add(motocicleta4);
+        motocicletas.add(motocicleta5);
+
+        concesionario.setCoches(coches);
+        concesionario.setMotocicletas(motocicletas);
+
+        System.out.println(concesionario);
+        System.out.println();
+
+        System.out.println("Velocidad media coches:" + concesionario.velocidadMediaCoches());
+        System.out.println("Velocidad media motocicleta:" + concesionario.velocidadMediaMotocicletas());
+        System.out.println("Velocidad media todo: " + concesionario.velocidadMediaVehiculos());
+        System.out.println();
+
+
+        concesionario.removeCoche(coche1);
+        concesionario.removeMotocicleta(motocicleta3);
+
+        System.out.println("Velocidad maxima coche1:" + coche1.velocidadMaxima());
+        System.out.println("Velocidad maxima motocicleta1" + motocicleta1.velocidadMaxima());
+        System.out.println();
+
+        System.out.println(concesionario);
     }
 
 }
