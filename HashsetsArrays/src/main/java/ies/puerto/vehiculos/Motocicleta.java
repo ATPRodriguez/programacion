@@ -1,27 +1,27 @@
-package ies.puerto.clases;
+package ies.puerto.vehiculos;
 
 import ies.puerto.abstractas.Vehiculo;
 
-public class Coche extends Vehiculo {
-    public Coche() {
+public class Motocicleta extends Vehiculo {
+    public Motocicleta() {
         super();
     }
 
-    public Coche(String matricula) {
+    public Motocicleta(String matricula) {
         super(matricula);
     }
 
-    public Coche(String marca, String modelo, String matricula, int velocidad) {
+    public Motocicleta(String marca, String modelo, String matricula, int velocidad) {
         super(marca, modelo, matricula, velocidad);
     }
 
     public int velocidadMaxima() {
-        return 180;
+        return 120;
     }
 
     @Override
     public String toString() {
-        return  "Coche: " +
+        return  "Motocicleta: " +
                 "marca='" + getMarca() + '\'' +
                 ", modelo='" + getModelo() + '\'' +
                 ", matricula='" + getMatricula() + '\'' +

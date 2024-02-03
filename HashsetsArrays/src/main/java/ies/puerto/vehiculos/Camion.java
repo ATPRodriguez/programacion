@@ -1,4 +1,4 @@
-package ies.puerto.clases;
+package ies.puerto.vehiculos;
 
 import ies.puerto.abstractas.Vehiculo;
 
@@ -16,12 +16,12 @@ public class Camion extends Vehiculo {
     }
 
     public int velocidadMaxima() {
-        return 120;
+        return 160;
     }
 
     @Override
     public String toString() {
-        return  "Motocicleta: " +
+        return  "Camion: " +
                 "marca='" + getMarca() + '\'' +
                 ", modelo='" + getModelo() + '\'' +
                 ", matricula='" + getMatricula() + '\'' +
