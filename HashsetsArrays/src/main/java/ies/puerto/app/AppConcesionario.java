@@ -119,6 +119,9 @@ public class AppConcesionario {
         concesionario.setBicicletas(bicicletas);
     }
 
+    /**
+     * Funcion para llamar un menu
+     */
     public static void llamarMenu () {
         Scanner scanner = new Scanner(System.in);
 
@@ -135,6 +138,10 @@ public class AppConcesionario {
         menuRespuesta(respuesta);
     }
 
+    /**
+     * Continuacion del menu en base a la respuesta
+     * @param respuesta (opcion del menu seleccionada)
+     */
     public static void menuRespuesta(int respuesta) {
         Scanner scanner = new Scanner(System.in);
      switch (respuesta) {
@@ -176,6 +183,10 @@ public class AppConcesionario {
      }
     }
 
+    /**
+     * Funcion que desarrolla la primera opcion del menu
+     * @param vehiculo tipo de vehiculo a aniadir
+     */
     public static void opcionAniadir (String vehiculo) {
         switch (vehiculo) {
             case "coche":
@@ -200,6 +211,11 @@ public class AppConcesionario {
         }
     }
 
+    /**
+     * Metodo que devuelve un vehiculo con los valores introducidos por el usuario
+     * @param vehiculo tipo de vehiculo seleccionado
+     * @return vehiculo con los valores del usuario
+     */
     public static Vehiculo construirVehiculo (String vehiculo) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Introduzca la marca del " + vehiculo);
@@ -239,6 +255,10 @@ public class AppConcesionario {
         return null;
     }
 
+    /**
+     * Funcion que desarrolla la segunda opcion del menu
+     * @param vehiculo tipo de vehiculo a mostrar
+     */
     public static void opcionMostrar (String vehiculo) {
         switch (vehiculo) {
             case "coche":
@@ -258,6 +278,10 @@ public class AppConcesionario {
         }
     }
 
+    /**
+     * Desarrollo de la tercera opcion del menu
+     * @param vehiculo tipo de vehiculo para eliminar
+     */
     public static void opcionEliminar (String vehiculo) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Introduzca la matricula del vehiculo a eliminar");
@@ -300,6 +324,10 @@ public class AppConcesionario {
         }
     }
 
+    /**
+     * Desarrollo de la cuarta opcion del menu
+     * @param vehiculo tipo de vehiculo para modificar
+     */
     public static void opcionModificar (String vehiculo) {
         Scanner scanner = new Scanner(System.in);
         switch (vehiculo) {
@@ -341,6 +369,10 @@ public class AppConcesionario {
         }
     }
 
+    /**
+     * Desarrollo de la quinta opcion del menu
+     * @param vehiculo tipo de vehiculo para ver la velocidad media
+     */
     public static void opcionVelocidad (String vehiculo) {
         switch (vehiculo) {
             case "coche":
