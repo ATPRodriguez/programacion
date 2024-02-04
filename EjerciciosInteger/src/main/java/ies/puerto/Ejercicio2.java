@@ -1,26 +1,19 @@
-package ies.puerto;
+    package ies.puerto;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
- * Crea un programa que tome un número entero como entrada y verifique si es par o impar utilizando los métodos de la clase Integer.
- * Controla las exception que pudiera generar.
+ * Escribe un programa que convierta un número entero en una cadena de texto
+ * y viceversa utilizando los métodos de la clase Integer.
  * @author ATPRodriguez
  */
-public class Ejercicio1 {
-    public static void main(String[] args) throws Exception {
-        Scanner lectura = new Scanner(System.in);
-        Integer numero = 0;
-        try {
-            numero = lectura.nextInt();
-        } catch (InputMismatchException exception) {
-            throw new Exception("No se ha introducido un numero");
-        }
-        if (numero % 2 == 0) {
-            System.out.println("Es par");
-        } else {
-            System.out.println("Es impar");
-        }
+public class Ejercicio2 {
+    public static void main(String[] args) {
+        Integer numero = 143;
+        String numeroStr = "431";
+        int numeroCadena = Integer.parseInt(numeroStr);
+        String numeroInteger = numero.toString();
+        System.out.println("Cadena: " + numeroCadena + ", Integer: " + numeroInteger);
     }
 }

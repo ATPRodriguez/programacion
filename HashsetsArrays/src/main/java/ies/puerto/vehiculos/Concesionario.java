@@ -142,7 +142,7 @@ public class Concesionario {
     }
 
     public boolean addCamion(Camion camion) {
-        if (camiones.containsValue(camion)) {
+        if (!camiones.containsValue(camion)) {
             camiones.put(camion.getMatricula(), camion);
         }
         return true;
@@ -174,7 +174,7 @@ public class Concesionario {
     }
 
     public boolean addBicicleta(Bicicleta bicicleta) {
-        if (bicicletas.containsValue(bicicleta)) {
+        if (!bicicletas.containsValue(bicicleta)) {
             bicicletas.put(bicicleta.getMatricula(), bicicleta);
         }
         return true;
