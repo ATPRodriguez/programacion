@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Objects;
+
 public class LibroTest {
 
     Libro libro;
@@ -19,7 +21,7 @@ public class LibroTest {
     }
 
     @Test
-    public void libroNotNullTes() {
+    public void libroNotNullTest() {
         Assertions.assertNotNull(libro);
     }
 
@@ -39,26 +41,25 @@ public class LibroTest {
 
     @Test
     public void toStringTest() {
-        Assertions.assertTrue(libro.toString().contains(isbn), "No contiene el valor esperaado");
-        Assertions.assertTrue(libro.toString().contains(titulo), "No contiene el valor esperaado");
-        Assertions.assertTrue(libro.toString().contains(autor), "No contiene el valor esperaado");
-        Assertions.assertTrue(libro.toString().contains(fPublicacion), "No contiene el valor esperaado");
+        Assertions.assertTrue(libro.toString().contains(isbn), "No contiene el valor esperado");
+        Assertions.assertTrue(libro.toString().contains(titulo), "No contiene el valor esperado");
+        Assertions.assertTrue(libro.toString().contains(autor), "No contiene el valor esperado");
+        Assertions.assertTrue(libro.toString().contains(fPublicacion), "No contiene el valor esperado");
     }
 
     @Test
     public void equalsTest() {
         Libro libroNulo = null;
         String libroOtraClase = "";
-        Libro otroLibro = new Libro(isbn, titulo, autor, fPublicacion);
-        Assertions.assertEquals(libro, otroLibro, "No son iguales");
+        Libro libroEquals = new Libro(isbn);
+        Assertions.assertEquals(libro, libroEquals, "No son iguales");
         Assertions.assertEquals(libro, libro);
-        Assertions.assertFalse(libro.equals(libroNulo));
-        Assertions.assertFalse(libro.equals(libroOtraClase), "No es la misma clase");
+        Assertions.assertNotEquals(libro, libroNulo);
+        Assertions.assertNotEquals(libro, libroOtraClase, "No es la misma clase");
     }
 
     @Test
     public void hashCodeTest () {
-        Libro otroLibro = new Libro(isbn,titulo,autor,fPublicacion);
-        Assertions.assertEquals(libro.hashCode(), otroLibro.hashCode(), "No tienen mismoHashCode");
+        Assertions.assertEquals(libro.hashCode(), Objects.hash(isbn), "No se ha obtenido el resultado esperado");
     }
 }
