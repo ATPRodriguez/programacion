@@ -1,10 +1,4 @@
-package ies.negocio;
-
-import ies.clases.Alimento;
-import ies.clases.Aparato;
-import ies.clases.CuidadoPersonal;
-import ies.clases.Souvenir;
-import ies.negocio.Tienda;
+package ies.clases;
 
 import java.util.*;
 
@@ -91,12 +85,9 @@ public class Tienda {
         if (!contieneAlimento(alimentoObtener)) {
             return null;
         }
-        for (Alimento alimento : alimentos) {
-            if (alimento.equals(alimentoObtener)) {
-                return alimento;
-            }
-        }
-        return null;
+
+        int posicion = alimentos.indexOf(alimentoObtener);
+        return  alimentos.get(posicion);
     }
 
     public boolean contieneCuidadoPersonal (CuidadoPersonal cuidadoPersonalContiene) {
@@ -204,6 +195,8 @@ public class Tienda {
 
     public Souvenir obtenerSouvenir (String id) {
         Souvenir souvenirObtener = new Souvenir(id.toUpperCase());
+
+
         for (Souvenir souvenir : souvenirs.values()) {
             if (souvenir.equals(souvenirObtener)) {
                 return souvenir;
@@ -299,7 +292,7 @@ public class Tienda {
             return resultado;
         }
         for (Souvenir souvenir : souvenirs.values()) {
-            resultado+=(souvenir.getPrecio() * souvenir.cantidadDisponible());
+            resultado+=(souvenir.getPrecio()* souvenir.cantidadDisponible());
         }
         return resultado;
     }

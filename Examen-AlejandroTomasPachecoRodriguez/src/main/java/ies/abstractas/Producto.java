@@ -11,16 +11,10 @@ public abstract class Producto implements IVendible {
     private String id;
     private int cantidad;
 
-    public Producto() {
-        nombre = "";
-        fechaEntrada = "";
-        id = "";
-    }
+    public Producto() {}
 
     public Producto(String id) {
-        nombre = "";
         this.id = id;
-        fechaEntrada= "";
     }
 
     public Producto(String nombre, float precio, String fechaEntrada, String id) {

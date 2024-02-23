@@ -1,7 +1,6 @@
-package ies.presentacion;
+package ies.app;
 
 import ies.clases.*;
-import ies.negocio.Tienda;
 
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -100,8 +99,7 @@ public class AppTienda {
             System.out.println("2.- Mostrar producto");
             System.out.println("3.- Eliminar producto");
             System.out.println("4.- Modificar producto");
-            System.out.println("5.- Ver la ganancia - precio total");
-            System.out.println("6.- Salir");
+            System.out.println("5.- Salir");
             respuesta = scanner.nextInt();
 
             switch (respuesta) {
@@ -118,8 +116,6 @@ public class AppTienda {
                     opcionModificar();
                     break;
                 case 5:
-                    opcionGanancia();
-                case 6:
                     System.out.println("Saliendo...");
                     break;
                 default:
@@ -278,16 +274,6 @@ public class AppTienda {
                 break;
         }
 
-    }
-
-    public static void opcionGanancia() {
-        Scanner scannerDinero = new Scanner(System.in);
-        System.out.println("Que desea ver? (Alimento/Aparato/Cuidado Personal/Souvenir)");
-        String respuesta = scannerDinero.nextLine();
-        switch (respuesta.toLowerCase()) {
-            case "alimento":
-                break;
-        }
     }
 
     public static void opcionModificar () {
