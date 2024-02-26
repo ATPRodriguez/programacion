@@ -94,4 +94,80 @@ public class FileCsv extends FicheroAbstract implements IFileInterface {
                 splitArray[2], Integer.parseInt(splitArray[4]));
         return cuidadoPersonal;
     }
+
+    public boolean contieneAlimento (Alimento alimento) {
+        return obtenerAlimentos().contains(alimento);
+    }
+    public boolean addAlimento (Alimento alimento) {
+        if (contieneAlimento(alimento)) {
+            return true;
+        }
+        List<Articulo> alimentos = obtenerAlimentos();
+        alimentos.add(alimento);
+        String mensaje = "";
+        for (Articulo alimentoCsv : obtenerAlimentos()) {
+            mensaje += alimentoCsv.toCsv() + "\n";
+        }
+        return escritura(FICHERO_ALIMENTOS, mensaje);
+    }
+
+    public boolean contieneAparato (Aparato aparato) {
+        return obtenerAparatos().contains(aparato);
+    }
+
+    public boolean removeAlimento (Alimento alimento) {
+        if (!contieneAlimento(alimento)) {
+            return true;
+        }
+        List<Articulo> alimentos = obtenerAlimentos();
+        alimentos.remove(alimento);
+        String mensaje = "";
+        for (Articulo alimentoCsv : obtenerAlimentos()) {
+            mensaje += alimentoCsv.toCsv() + "\n";
+        }
+        return escritura(FICHERO_ALIMENTOS, mensaje);
+    }
+
+    public boolean addAparato (Aparato aparato) {
+        if (contieneAparato(aparato)) {
+            return true;
+        }
+        List<Articulo> aparatos = obtenerAparatos();
+        aparatos.add(aparato);
+        String mensaje = "";
+        for (Articulo aparatoCsv : obtenerAparatos()) {
+            mensaje += aparatoCsv.toCsv() + "\n";
+        }
+        return escritura(FICHERO_APARATOS, mensaje);
+    }
+
+    public boolean removeAparato (Aparato aparato) {
+        if (!contieneAparato(aparato)) {
+            return true;
+        }
+        List<Articulo> aparatos = obtenerAparatos();
+        aparatos.remove(aparato);
+        String mensaje = "";
+        for (Articulo aparatoCsv : obtenerAparatos()) {
+            mensaje += aparatoCsv.toCsv() + "\n";
+        }
+        return escritura(FICHERO_APARATOS, mensaje);
+    }
+
+    public boolean contieneCuidadoPersonal (CuidadoPersonal cuidadoPersonal) {
+        return obtenerCuidados().contains(cuidadoPersonal);
+    }
+
+    public boolean addCuidadoPersonal (CuidadoPersonal cuidadoPersonal) {
+        if (contieneCuidadoPersonal(cuidadoPersonal)) {
+            return true;
+        }
+        List<Articulo> cuidados = obtenerCuidados();
+        cuidados.add(cuidadoPersonal);
+        String mensaje = "";
+        for (Articulo cuidadoPersonalCsv : obtenerCuidados()) {
+            mensaje += cuidadoPersonalCsv.toCsv() + "\n";
+        }
+        return true;
+    }
 }

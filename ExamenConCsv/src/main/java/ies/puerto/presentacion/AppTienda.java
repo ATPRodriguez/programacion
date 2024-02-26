@@ -15,4 +15,5 @@ public class AppTienda {
 
         System.out.println(tiendaNegocio.obtenerArticulos());
     }
+
 }
