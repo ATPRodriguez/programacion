@@ -95,6 +95,13 @@ public class FileCsv extends FicheroAbstract implements IFileInterface {
         return cuidadoPersonal;
     }
 
+    public boolean actualizarAlimentosCsv () {
+        String mensaje = "";
+        for (Articulo alimentoCsv : obtenerAlimentos()) {
+            mensaje += alimentoCsv.toCsv() + "\n";
+        }
+        return escritura(FICHERO_ALIMENTOS, mensaje);
+    }
     public boolean contieneAlimento (Alimento alimento) {
         return obtenerAlimentos().contains(alimento);
     }
@@ -104,15 +111,18 @@ public class FileCsv extends FicheroAbstract implements IFileInterface {
         }
         List<Articulo> alimentos = obtenerAlimentos();
         alimentos.add(alimento);
-        String mensaje = "";
-        for (Articulo alimentoCsv : obtenerAlimentos()) {
-            mensaje += alimentoCsv.toCsv() + "\n";
-        }
-        return escritura(FICHERO_ALIMENTOS, mensaje);
+        return actualizarAlimentosCsv();
     }
 
-    public boolean contieneAparato (Aparato aparato) {
-        return obtenerAparatos().contains(aparato);
+    public boolean actualizarAlimento (Alimento alimento) {
+        if (!contieneAlimento(alimento)) {
+            return false;
+        }
+        List<Articulo> alimentos = obtenerAlimentos();
+        int posicion = alimentos.indexOf(alimento);
+        alimentos.remove(alimento);
+        alimentos.add(posicion, alimento);
+        return actualizarAlimentosCsv();
     }
 
     public boolean removeAlimento (Alimento alimento) {
@@ -121,11 +131,11 @@ public class FileCsv extends FicheroAbstract implements IFileInterface {
         }
         List<Articulo> alimentos = obtenerAlimentos();
         alimentos.remove(alimento);
-        String mensaje = "";
-        for (Articulo alimentoCsv : obtenerAlimentos()) {
-            mensaje += alimentoCsv.toCsv() + "\n";
-        }
-        return escritura(FICHERO_ALIMENTOS, mensaje);
+        return actualizarAlimentosCsv();
+    }
+
+    public boolean contieneAparato (Aparato aparato) {
+        return obtenerAparatos().contains(aparato);
     }
 
     public boolean addAparato (Aparato aparato) {
