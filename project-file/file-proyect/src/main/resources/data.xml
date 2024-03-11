@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<personas>
+    <persona>
+        <id>1</id>
+        <nombre>John Doe</nombre>
+        <edad>30</edad>
+        <correo>johndoe@example.com</correo>
+    </persona>
+    <persona>
+        <id>2</id>
+        <nombre>Jane Smith</nombre>
+        <edad>25</edad>
+        <correo>janesmith@example.com</correo>
+    </persona>
+    <persona>
+        <id>3</id>
+        <nombre>Michael Johnson</nombre>
+        <edad>35</edad>
+        <correo>michaeljohnson@example.com</correo>
+    </persona>
+    <persona>
+        <id>4</id>
+        <nombre>Emily Davis</nombre>
+        <edad>28</edad>
+        <correo>emilydavis@example.com</correo>
+    </persona>
+    <persona>
+        <id>5</id>
+        <nombre>otro</nombre>
+        <edad>99</edad>
+        <correo>otro@email.com</correo>
+    </persona>
+</personas>

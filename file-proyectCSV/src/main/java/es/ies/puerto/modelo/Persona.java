@@ -6,21 +6,22 @@ import org.simpleframework.xml.Root;
 
 import java.util.Objects;
 
-@Root (name = "persona")
+@Root(name = "persona")
 public class Persona extends UtilidadesClass {
-    @Element (name = "id")
-    private int id;
-    @Element (name = "nombre")
-    private String nombre;
-    @Element (name = "edad")
-    private int edad;
-    @Element (name = "correo")
-    private String email;
 
-    public Persona () {}
+    @Element(name = "id")
+    int id;
+    @Element(name = "nombre")
+    String nombre;
+    @Element(name = "edad")
+    int edad;
+    @Element(name = "correo")
+    String email;
 
-    public Persona(int id) {
-        this.id = id;
+    public Persona() {}
+
+    public Persona (int id) {
+        this.id= id;
     }
 
     public Persona(int id, String nombre, int edad, String email) {
@@ -59,9 +60,17 @@ public class Persona extends UtilidadesClass {
     }
 
     @Override
+    public String toString() {
+        return "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", edad=" + edad +
+                ", email='" + email;
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Persona)) return false;
         Persona persona = (Persona) o;
         return id == persona.id;
     }
@@ -71,15 +80,8 @@ public class Persona extends UtilidadesClass {
         return Objects.hash(id);
     }
 
-    @Override
-    public String toString() {
-        return  "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", edad=" + edad +
-                ", email='" + email + '\'';
-    }
-
     public String toCsv() {
-        return id + DELIMITADOR + nombre + DELIMITADOR + edad + DELIMITADOR + email;
+        return id + DELIMITADOR + nombre
+                + DELIMITADOR + edad + DELIMITADOR + email;
     }
 }
