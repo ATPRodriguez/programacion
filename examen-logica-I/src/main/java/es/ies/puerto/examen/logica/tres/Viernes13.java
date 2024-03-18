@@ -10,6 +10,7 @@ public class Viernes13 {
         if (fecha == null) {
             return false;
         }
+
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(fecha);
 
