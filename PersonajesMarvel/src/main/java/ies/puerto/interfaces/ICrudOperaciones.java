@@ -10,4 +10,5 @@ public interface ICrudOperaciones {
     void agregarPersonaje(Personaje personaje);
     void eliminarPersonaje(Personaje personaje);
     void modificarPersonaje(Personaje personaje);
+    void cargarBackup();
 }

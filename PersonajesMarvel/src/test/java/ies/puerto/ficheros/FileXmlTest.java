@@ -2,6 +2,7 @@ package ies.puerto.ficheros;
 
 import ies.puerto.interfaces.ICrudOperaciones;
 import ies.puerto.personaje.Personaje;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -43,6 +44,21 @@ public class FileXmlTest {
     }
 
     @Test
+    public void agregarEliminarPersonajeTest(){
+        int tamanioOriginal = personajes.size();
+        Personaje personajeAgregar = new Personaje (alias, nombre, genero, poderes);
+        persistencia.agregarPersonaje(personajeAgregar);
+        personajes = persistencia.obtenerPersonajes();
+        int tamanioNuevo = personajes.size();
+
+        Assertions.assertTrue(personajes.contains(personajeAgregar), MENSAJE_ERROR);
+        Assertions.assertEquals(tamanioOriginal + 1, tamanioNuevo, MENSAJE_ERROR);
+
+        persistencia.eliminarPersonaje(personajeAgregar);
+        Assertions.assertFalse(personajes.contains(personajeAgregar), MENSAJE_ERROR);
+    }
+
+    @Test
     public void modificarPersonajeTest(){
         Personaje personajeModificar = new Personaje("Peter Parker");
 
@@ -57,21 +73,6 @@ public class FileXmlTest {
 
         Assertions.assertEquals(personajeModificar,
                 persistencia.obtenerPersonaje(personajeModificar), MENSAJE_ERROR);
-        persistencia.modificarPersonaje(personajeBackup);
-    }
-
-    @Test
-    public void agregarEliminarPersonajeTest(){
-        int tamanioOriginal = personajes.size();
-        Personaje personajeAgregar = new Personaje (alias, nombre, genero, poderes);
-        persistencia.agregarPersonaje(personajeAgregar);
-        personajes = persistencia.obtenerPersonajes();
-        int tamanioNuevo = personajes.size();
-
-        Assertions.assertTrue(personajes.contains(personajeAgregar), MENSAJE_ERROR);
-        Assertions.assertEquals(tamanioOriginal + 1, tamanioNuevo, MENSAJE_ERROR);
-
-        persistencia.eliminarPersonaje(personajeAgregar);
-        Assertions.assertFalse(personajes.contains(personajeAgregar), MENSAJE_ERROR);
+        persistencia.cargarBackup();
     }
 }

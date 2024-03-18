@@ -17,6 +17,8 @@ public class FileCsv extends Utilidades implements ICrudOperaciones {
     String path = "src/main/resources/personajes.csv";
     List<Personaje> personajes;
 
+    List<Personaje> personajesBackup = obtenerPersonajes();
+
     @Override
     public List<Personaje> obtenerPersonajes() {
         personajes = new ArrayList<>();
@@ -75,6 +77,11 @@ public class FileCsv extends Utilidades implements ICrudOperaciones {
         actualizarFichero(personajes);
     }
 
+    @Override
+    public void cargarBackup() {
+        actualizarFichero(personajesBackup);
+    }
+
     public void actualizarFichero(List<Personaje> personajes){
         try (FileWriter writer = new FileWriter(path)){
             for (Personaje personajeLista : personajes){
@@ -84,4 +91,6 @@ public class FileCsv extends Utilidades implements ICrudOperaciones {
             throw new RuntimeException(e);
         }
     }
+
+
 }

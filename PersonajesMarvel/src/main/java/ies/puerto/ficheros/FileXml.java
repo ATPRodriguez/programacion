@@ -13,6 +13,7 @@ public class FileXml implements ICrudOperaciones {
 
     String path ="src/main/resources/personajes.xml";
     List<Personaje> personajes;
+    List<Personaje> personajesBackup = obtenerPersonajes();
 
     public FileXml (){
         personajes = new ArrayList<>();
@@ -66,6 +67,11 @@ public class FileXml implements ICrudOperaciones {
         int posicion = personajes.indexOf(personaje);
         personajes.set(posicion,personaje);
         actualizarFichero(personajes);
+    }
+
+    @Override
+    public void cargarBackup() {
+        actualizarFichero(personajesBackup);
     }
 
     public void actualizarFichero(List<Personaje> personajes){

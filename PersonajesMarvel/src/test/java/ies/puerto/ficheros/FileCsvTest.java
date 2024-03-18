@@ -2,6 +2,7 @@ package ies.puerto.ficheros;
 
 import ies.puerto.interfaces.ICrudOperaciones;
 import ies.puerto.personaje.Personaje;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -72,6 +73,6 @@ public class FileCsvTest {
 
         Assertions.assertEquals(personajeModificar,
                 persistencia.obtenerPersonaje(personajeModificar), MENSAJE_ERROR);
-        persistencia.modificarPersonaje(personajeBackup);
+        persistencia.cargarBackup();
     }
 }
