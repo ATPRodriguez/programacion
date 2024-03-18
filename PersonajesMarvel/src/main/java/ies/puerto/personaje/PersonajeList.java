@@ -9,7 +9,9 @@ public class PersonajeList {
     @ElementList (inline = true)
     private List<Personaje> personajes;
 
-    public PersonajeList() {}
+    public PersonajeList() {
+        personajes = new ArrayList<>();
+    }
 
     public PersonajeList (List<Personaje> personajes) {
         this.personajes = new ArrayList<>();

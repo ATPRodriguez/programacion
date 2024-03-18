@@ -15,6 +15,7 @@ public class FileXml implements ICrudOperaciones {
     List<Personaje> personajes;
 
     public FileXml (){
+        personajes = new ArrayList<>();
     }
 
     @Override

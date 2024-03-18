@@ -12,13 +12,13 @@ import java.util.Set;
 @Root (name = "personaje")
 public class Personaje extends Utilidades {
     @Element (name = "nombre")
-    String nombre;
+    private String nombre;
     @Element (name = "alias")
-    String alias;
+    private String alias;
     @Element (name = "genero")
-    String genero;
+    private String genero;
     @ElementList (name = "poderes")
-    Set<String> poderes;
+    private Set<String> poderes;
 
     public Personaje(){
         poderes = new HashSet<>();
@@ -41,6 +41,10 @@ public class Personaje extends Utilidades {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
     }
 
     public String getAlias() {

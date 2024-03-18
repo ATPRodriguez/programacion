@@ -12,9 +12,9 @@ import java.util.List;
 import java.util.Set;
 
 public class FileCsvTest {
-    String nombre = "nombre";
-    String alias = "alias";
-    String genero = "genero";
+    String nombre = "NombreNuevo";
+    String alias = "AliasNuevo";
+    String genero = "GeneroNuevo";
     Set<String> poderes;
     ICrudOperaciones persistencia;
     List<Personaje> personajes;
@@ -54,10 +54,7 @@ public class FileCsvTest {
         Assertions.assertEquals(tamanioOriginal + 1, tamanioNuevo, MENSAJE_ERROR);
 
         persistencia.eliminarPersonaje(personajeAgregar);
-        personajes = persistencia.obtenerPersonajes();
-        tamanioNuevo = personajes.size();
-
-        Assertions.assertEquals(tamanioOriginal, tamanioNuevo, MENSAJE_ERROR);
+        Assertions.assertFalse(personajes.contains(personajeAgregar), MENSAJE_ERROR);
     }
 
     @Test

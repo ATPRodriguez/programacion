@@ -36,7 +36,7 @@ public class FileCsv extends Utilidades implements ICrudOperaciones {
     public Personaje crearPersonaje(String [] datos){
         Set<String> poderes = new HashSet<>();
         for (int i=3; i< datos.length; i++) {
-            poderes.add(datos[i]);
+            poderes.add(datos[i].trim());
         }
         return new Personaje(datos[1], datos[0], datos[2], poderes);
     }

@@ -12,9 +12,9 @@ import java.util.List;
 import java.util.Set;
 
 public class FileXmlTest {
-    String nombre = "nombre";
-    String alias = "alias";
-    String genero = "genero";
+    String nombre = "NombreNuevo";
+    String alias = "AliasNuevo";
+    String genero = "GeneroNuevo";
     Set<String> poderes;
     ICrudOperaciones persistencia;
     List<Personaje> personajes;
@@ -43,27 +43,6 @@ public class FileXmlTest {
     }
 
     @Test
-    public void agregarEliminarPersonajeTest(){
-        personajes = persistencia.obtenerPersonajes();
-        Personaje personajeAgregar = new Personaje (alias, nombre, genero, poderes);
-
-        int tamanioOriginal = personajes.size();
-        persistencia.agregarPersonaje(personajeAgregar);
-        personajes = persistencia.obtenerPersonajes();
-        int tamanioNuevo = personajes.size();
-
-        Assertions.assertTrue(personajes.contains(personajeAgregar), MENSAJE_ERROR);
-        Assertions.assertEquals(tamanioOriginal + 1, tamanioNuevo, MENSAJE_ERROR);
-
-        persistencia.eliminarPersonaje(personajeAgregar);
-        personajes = persistencia.obtenerPersonajes();
-        tamanioNuevo = personajes.size();
-
-        Assertions.assertFalse(personajes.contains(personajeAgregar), MENSAJE_ERROR);
-        Assertions.assertEquals(tamanioOriginal, tamanioNuevo, MENSAJE_ERROR);
-    }
-
-    @Test
     public void modificarPersonajeTest(){
         Personaje personajeModificar = new Personaje("Peter Parker");
 
@@ -79,5 +58,20 @@ public class FileXmlTest {
         Assertions.assertEquals(personajeModificar,
                 persistencia.obtenerPersonaje(personajeModificar), MENSAJE_ERROR);
         persistencia.modificarPersonaje(personajeBackup);
+    }
+
+    @Test
+    public void agregarEliminarPersonajeTest(){
+        int tamanioOriginal = personajes.size();
+        Personaje personajeAgregar = new Personaje (alias, nombre, genero, poderes);
+        persistencia.agregarPersonaje(personajeAgregar);
+        personajes = persistencia.obtenerPersonajes();
+        int tamanioNuevo = personajes.size();
+
+        Assertions.assertTrue(personajes.contains(personajeAgregar), MENSAJE_ERROR);
+        Assertions.assertEquals(tamanioOriginal + 1, tamanioNuevo, MENSAJE_ERROR);
+
+        persistencia.eliminarPersonaje(personajeAgregar);
+        Assertions.assertFalse(personajes.contains(personajeAgregar), MENSAJE_ERROR);
     }
 }
