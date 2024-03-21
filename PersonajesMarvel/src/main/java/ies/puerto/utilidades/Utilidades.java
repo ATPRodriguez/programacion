@@ -1,5 +1,5 @@
 package ies.puerto.utilidades;
 
 public class Utilidades {
-    public final String DELIMITADOR = ",";
+    public static final String DELIMITADOR = ",";
 }

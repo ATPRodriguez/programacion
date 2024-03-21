@@ -62,8 +62,6 @@ public class FileCsvTest {
     public void modificarPersonajeTest(){
         Personaje personajeModificar = new Personaje("Peter Parker");
 
-        Personaje personajeBackup = persistencia.obtenerPersonaje(personajeModificar);
-
         personajeModificar = persistencia.obtenerPersonaje(personajeModificar);
         personajeModificar.setNombre(nombre);
         personajeModificar.setGenero(genero);

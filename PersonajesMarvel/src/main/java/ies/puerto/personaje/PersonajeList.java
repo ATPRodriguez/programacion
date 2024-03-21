@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 @Root (name = "personajes")
 public class PersonajeList {
-    @ElementList (inline = true)
+    @ElementList (inline = true, required = false)
     private List<Personaje> personajes;
 
     public PersonajeList() {

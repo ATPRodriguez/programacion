@@ -16,7 +16,6 @@ import java.util.Set;
 public class FileCsv extends Utilidades implements ICrudOperaciones {
     String path = "src/main/resources/personajes.csv";
     List<Personaje> personajes;
-
     List<Personaje> personajesBackup = obtenerPersonajes();
 
     @Override

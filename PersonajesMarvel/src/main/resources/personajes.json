@@ -7,8 +7,7 @@
       "Vuelo",
       "Armadura tecnológica avanzada",
       "Rayos láser"
-    ],
-    "DELIMITADOR": ","
+    ]
   },
   {
     "nombre": "Spider-Man",
@@ -18,7 +17,6 @@
       "Agilidad sobrehumana",
       "Trepamuros",
       "Sentido arácnido"
-    ],
-    "DELIMITADOR": ","
+    ]
   }
 ]

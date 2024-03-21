@@ -23,7 +23,7 @@ public class FileXmlTest {
 
     @BeforeEach
     public void beforeEach(){
-        persistencia = new FileXml();
+        persistencia = new FileCsv();
         personajes = persistencia.obtenerPersonajes();
         poderes = new HashSet<>(Arrays.asList("poder1", "poder2", "poder3"));
     }
@@ -61,8 +61,6 @@ public class FileXmlTest {
     @Test
     public void modificarPersonajeTest(){
         Personaje personajeModificar = new Personaje("Peter Parker");
-
-        Personaje personajeBackup = persistencia.obtenerPersonaje(personajeModificar);
 
         personajeModificar = persistencia.obtenerPersonaje(personajeModificar);
         personajeModificar.setNombre(nombre);
