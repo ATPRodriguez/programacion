@@ -23,7 +23,7 @@ public class FileXmlTest {
 
     @BeforeEach
     public void beforeEach(){
-        persistencia = new FileCsv();
+        persistencia = new FileXml();
         personajes = persistencia.obtenerPersonajes();
         poderes = new HashSet<>(Arrays.asList("poder1", "poder2", "poder3"));
     }

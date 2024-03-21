@@ -13,16 +13,12 @@ public class FileXml implements ICrudOperaciones {
 
     String path ="src/main/resources/personajes.xml";
     List<Personaje> personajes;
-    List<Personaje> personajesBackup = obtenerPersonajes();
-
-    public FileXml (){
-        personajes = new ArrayList<>();
-    }
+    final List<Personaje> personajesBackup = obtenerPersonajes();
 
     @Override
     public List<Personaje> obtenerPersonajes() {
         Persister serializer = new Persister();
-        try {
+        try{
             File file = new File(path);
             PersonajeList personajeList = serializer.read(PersonajeList.class, file);
             personajes = personajeList.getPersonajes();
@@ -52,11 +48,9 @@ public class FileXml implements ICrudOperaciones {
 
     @Override
     public void eliminarPersonaje (Personaje personaje) {
-        if (!personajes.contains(personaje)){
-            return;
+        if (personajes.remove(personaje)){
+            actualizarFichero(personajes);
         }
-        personajes.remove(personaje);
-        actualizarFichero(personajes);
     }
 
     @Override

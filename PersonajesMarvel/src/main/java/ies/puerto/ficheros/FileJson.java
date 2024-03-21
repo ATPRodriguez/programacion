@@ -18,11 +18,7 @@ import java.util.List;
 public class FileJson implements ICrudOperaciones {
     String path ="src/main/resources/personajes.json";
     List<Personaje> personajes;
-    List<Personaje> personajesBackup = obtenerPersonajes();
-
-    public FileJson(){
-        personajes = new ArrayList<>();
-    }
+    final List<Personaje> personajesBackup = obtenerPersonajes();
     @Override
     public List<Personaje> obtenerPersonajes() {
         try {
