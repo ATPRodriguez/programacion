@@ -41,6 +41,9 @@ public class FileCsvTest {
         Assertions.assertEquals(personajeObtener.getNombre(), "Iron Man", MENSAJE_ERROR);
         Assertions.assertFalse(personajeObtener.getPoderes().isEmpty(), MENSAJE_ERROR);
         Assertions.assertEquals(personajeObtener.getGenero(), "Masculino", MENSAJE_ERROR);
+
+        Personaje personajeNoObtener = new Personaje("NoContenido");
+        Assertions.assertFalse(personajes.contains(personajeNoObtener));
     }
 
     @Test
