@@ -15,12 +15,12 @@ public class OperacionesBd extends Conexion {
     }
 
     public Set<Usuario> obtenerUsuarios () throws UsuarioException {
-        String query = "SELECT u.id, u.nombre, u.edad, u.ciudad FROM usuarios as u;";
+        String query = "SELECT u.id, u.nombre, u.edad, u.ciudad FROM usuarios as u";
         return obtener(query);
     }
 
     public Usuario obtenerUsuario (Usuario usuario) throws UsuarioException {
-        String query = "SELECT u.id, u.nombre, u.edad, u.ciudad FROM usuarios as u WHERE u.id='" + usuario.getId() + "';";
+        String query = "SELECT u.id, u.nombre, u.edad, u.ciudad FROM usuarios as u WHERE u.id='" + usuario.getId() + "'";
         Set<Usuario> lista = obtener(query);
         if (lista.isEmpty()) {
             return null;
@@ -30,18 +30,21 @@ public class OperacionesBd extends Conexion {
 
     public void insertarUsuario (Usuario usuario) throws UsuarioException {
         String query = "INSERT INTO usuarios (nombre, edad, ciudad) VALUES ('" + usuario.getNombre() + "','"
-                + usuario.getEdad() + "','" + usuario.getCiudad() + "');";
+                + usuario.getEdad() + "','" + usuario.getCiudad() + "')";
         actualizar(query);
     }
 
 
-    public void eliminarUsuario (Usuario usuario) {
-
+    public void eliminarUsuario (Usuario usuario) throws UsuarioException {
+        String query = "delete FROM usuarios where id='" + usuario.getId() + "'";
+        actualizar(query);
     }
 
 
-    public void actualizarUsuario (Usuario usuario) {
-
+    public void actualizarUsuario (Usuario usuario) throws UsuarioException {
+        String query = "UPDATE usuarios SET nombre='" + usuario.getNombre() + "', ciudad='" +
+                usuario.getCiudad() + "', edad=" + usuario.getEdad() + " where id='" + usuario.getId() + "'";
+        actualizar(query);
     }
 
     private void actualizar (String query) throws UsuarioException {
