@@ -1,5 +1,6 @@
 package es.ies.puerto.modelo.db;
 
+import es.ies.puerto.exception.UsuarioException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -9,7 +10,7 @@ public class ConexionTest {
     String url = "src/main/resources/usuarios.db";
 
     @BeforeEach
-    public void beforeEach() {
+    public void beforeEach() throws UsuarioException {
         conexion = new Conexion(url);
     }
 
