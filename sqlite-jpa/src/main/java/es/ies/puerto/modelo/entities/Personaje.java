@@ -17,12 +17,7 @@ public class Personaje implements Serializable {
 	private static final long serialVersionUID = -7250234396452258822L;
 
 	@Id
-	@TableGenerator(name = "gen_person", 
-	                table = "table_keys", 
-	                pkColumnName = "name_table", 
-	                valueColumnName = "cod_key", 
-	                pkColumnValue = "person", allocationSize = 1, initialValue = 1)
-	@GeneratedValue(generator = "gen_person", strategy = GenerationType.AUTO)
+	@GeneratedValue(generator = "gen_person", strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Integer id;
 	@Column(name = "nombre")
@@ -54,6 +49,12 @@ public class Personaje implements Serializable {
 
 	public Personaje(Integer id) {
 		this.id = id;
+	}
+
+	public Personaje(Integer id, String nombre, String genero) {
+		this.id = id;
+		this.nombre = nombre;
+		this.genero = genero;
 	}
 
 	public Personaje(Integer id, String nombre, String genero, Alias alias, Set<Poder> poderes) {

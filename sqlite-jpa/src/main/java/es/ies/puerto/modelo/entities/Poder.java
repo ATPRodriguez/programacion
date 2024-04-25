@@ -13,7 +13,7 @@ public class Poder {
     private static final long serialVersionUID = 1;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
 
@@ -24,6 +24,19 @@ public class Poder {
             mappedBy = "poderes")
     @Fetch(FetchMode.SELECT)
     private Set<Personaje> personajes;
+
+    public Poder() {
+    }
+
+    public Poder(Integer id) {
+        this.id = id;
+    }
+
+    public Poder(Integer id, String poder) {
+        this.id = id;
+        this.poder = poder;
+        this.personajes = personajes;
+    }
 
     public Integer getId() {
         return id;

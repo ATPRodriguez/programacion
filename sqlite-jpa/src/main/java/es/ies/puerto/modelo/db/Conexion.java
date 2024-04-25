@@ -10,6 +10,10 @@ public class Conexion {
 
     private String url;
 
+    public Conexion() {
+        this.url = "src/main/resources/personajes.db";
+    }
+
     public Conexion(String url) throws PersonajeException {
         this.url = "jdbc:sqlite:" + url;
     }

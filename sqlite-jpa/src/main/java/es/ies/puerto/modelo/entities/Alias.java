@@ -11,7 +11,7 @@ public class Alias implements Serializable {
     private static final long serialVersionUID = 1;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
     @Column(name = "personaje_id")
@@ -28,9 +28,9 @@ public class Alias implements Serializable {
         this.id = id;
     }
 
-    public Alias(Integer id, Integer personaje_id, String alias, Personaje personaje) {
+    public Alias(Integer id, Personaje personaje, String alias) {
         this.id = id;
-        this.personaje_id = personaje_id;
+        this.personaje_id = personaje.getId();
         this.alias = alias;
         this.personaje = personaje;
     }
