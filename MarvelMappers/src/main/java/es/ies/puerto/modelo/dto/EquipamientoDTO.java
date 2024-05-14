@@ -4,7 +4,6 @@ public class EquipamientoDTO {
     String id;
     String nombre;
     String descripcion;
-    String personaje_id;
 
     public EquipamientoDTO() {
     }
@@ -13,11 +12,10 @@ public class EquipamientoDTO {
         this.id = id;
     }
 
-    public EquipamientoDTO(String id, String nombre, String descripcion, String personaje_id) {
+    public EquipamientoDTO(String id, String nombre, String descripcion) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.personaje_id = personaje_id;
     }
 
     public String getId() {
@@ -44,11 +42,4 @@ public class EquipamientoDTO {
         this.descripcion = descripcion;
     }
 
-    public String getPersonaje_id() {
-        return personaje_id;
-    }
-
-    public void setPersonaje_id(String personaje_id) {
-        this.personaje_id = personaje_id;
-    }
 }

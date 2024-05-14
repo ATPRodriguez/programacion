@@ -10,7 +10,6 @@ public class PersonajeDTO {
     private String id;
     private String nombre;
     private String genero;
-
     private Alias alias;
     private Set<Equipamiento> equipamientos;
     private Set<Poder> poderes;

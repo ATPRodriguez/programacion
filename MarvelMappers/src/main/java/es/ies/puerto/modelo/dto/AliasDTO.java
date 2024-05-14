@@ -4,7 +4,6 @@ package es.ies.puerto.modelo.dto;
 public class AliasDTO {
     String id;
     String descripcion;
-    String personaje_id;
 
     public AliasDTO() {
     }
@@ -13,10 +12,9 @@ public class AliasDTO {
         this.id = id;
     }
 
-    public AliasDTO(String id, String descripcion, String personaje_id) {
+    public AliasDTO(String id, String descripcion) {
         this.id = id;
         this.descripcion = descripcion;
-        this.personaje_id = personaje_id;
     }
 
     public String getId() {
@@ -33,13 +31,5 @@ public class AliasDTO {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
-    }
-
-    public String getPersonaje_id() {
-        return personaje_id;
-    }
-
-    public void setPersonaje_id(String personaje_id) {
-        this.personaje_id = personaje_id;
     }
 }
