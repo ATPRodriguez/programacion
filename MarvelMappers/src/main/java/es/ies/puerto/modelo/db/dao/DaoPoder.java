@@ -49,10 +49,11 @@ public class DaoPoder extends DaoAbstract {
         return false;
     }
 
-    public void deletePoder(Poder poder) throws MarvelException {
+    public boolean deletePoder(Poder poder) throws MarvelException {
         String query = "delete FROM Poder as p" +
                 " where p.id='"+poder.getId()+"'";
         actualizar(query);
+        return true;
     }
 
     private Set<Poder> obtener(String query) throws MarvelException {

@@ -1,5 +1,7 @@
 package es.ies.puerto.modelo.dto;
 
+import java.util.Objects;
+
 public class EquipamientoDTO {
     String id;
     String nombre;
@@ -42,4 +44,16 @@ public class EquipamientoDTO {
         this.descripcion = descripcion;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        EquipamientoDTO that = (EquipamientoDTO) o;
+        return Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }

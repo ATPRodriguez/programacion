@@ -49,10 +49,11 @@ public class DaoEquipamiento extends DaoAbstract {
         return false;
     }
 
-    public void deleteEquipamiento(Equipamiento Equipamiento) throws MarvelException {
+    public boolean deleteEquipamiento(Equipamiento Equipamiento) throws MarvelException {
         String query = "delete FROM Equipamiento as p" +
                 " where p.id='"+Equipamiento.getId()+"'";
         actualizar(query);
+        return true;
     }
 
     private Set<Equipamiento> obtener(String query) throws MarvelException {

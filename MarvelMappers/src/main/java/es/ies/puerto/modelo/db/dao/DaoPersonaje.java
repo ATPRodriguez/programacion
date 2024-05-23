@@ -52,10 +52,11 @@ public class DaoPersonaje extends DaoAbstract {
         return false;
     }
 
-    public void deletePersonaje(Personaje Personaje) throws MarvelException {
+    public boolean deletePersonaje(Personaje Personaje) throws MarvelException {
         String query = "delete FROM Personaje as p" +
                 " where p.id='"+Personaje.getId()+"'";
         actualizar(query);
+        return true;
     }
 
     private Set<Personaje> obtener(String query) throws MarvelException {

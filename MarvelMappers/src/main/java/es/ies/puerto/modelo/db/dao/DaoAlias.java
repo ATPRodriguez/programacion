@@ -49,13 +49,14 @@ public class DaoAlias extends DaoAbstract {
             //Si existe actualiza
             //Si NO existe inserta
             actualizar(query);
-            return false;
+            return true;
         }
 
-        public void deleteAlias(Alias alias) throws MarvelException {
+        public boolean deleteAlias(Alias alias) throws MarvelException {
             String query = "delete FROM Alias as p" +
                     " where p.id='"+alias.getId()+"'";
             actualizar(query);
+            return true;
         }
 
         private Set<Alias> obtener(String query) throws MarvelException {

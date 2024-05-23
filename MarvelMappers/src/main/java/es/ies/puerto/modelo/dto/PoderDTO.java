@@ -1,5 +1,7 @@
 package es.ies.puerto.modelo.dto;
 
+import java.util.Objects;
+
 public class PoderDTO {
     String id;
     String nombre;
@@ -32,4 +34,16 @@ public class PoderDTO {
         this.nombre = nombre;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PoderDTO poderDTO = (PoderDTO) o;
+        return Objects.equals(id, poderDTO.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }

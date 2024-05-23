@@ -69,8 +69,8 @@ public class MappersHelp {
         personajeDTO.setAlias(alias);
         personajeDTO.setGenero(GENERO);
         personajeDTO.setNombre(NOMBRE_TEST);
-        personajeDTO.setPoderes(new HashSet<>(Arrays.asList(poder)));
-        personajeDTO.setEquipamientos(new HashSet<>(Arrays.asList(equipamiento)));
+        personajeDTO.setPoderes(new HashSet<>(Arrays.asList(poderDTO)));
+        personajeDTO.setEquipamientos(new HashSet<>(Arrays.asList(equipamientoDTO)));
 
         personaje = new Personaje();
         personaje.setId(PERSONAJE_ID);
