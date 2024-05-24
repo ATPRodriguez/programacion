@@ -3,6 +3,8 @@ package es.ies.puerto.modelo.db.dao;
 import es.ies.puerto.abstractas.DaoAbstract;
 import es.ies.puerto.exception.MarvelException;
 import es.ies.puerto.modelo.db.entidades.Equipamiento;
+import es.ies.puerto.modelo.db.entidades.Personaje;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -19,6 +21,12 @@ public class DaoEquipamiento extends DaoAbstract {
     public Set<Equipamiento> findAllEquipamiento() throws MarvelException {
         String query;
         query  = "select p.id, p.nombre, p.descripcion, p.personaje_id from Equipamiento as p";
+        return obtener(query);
+    }
+
+    public Set<Equipamiento> findAllEquipamiento(Personaje personaje) throws MarvelException {
+        String query;
+        query  = "select p.id, p.nombre, p.descripcion, p.personaje_id from Equipamiento as p where p.personaje_id='" + personaje.getId() + "'";
         return obtener(query);
     }
 

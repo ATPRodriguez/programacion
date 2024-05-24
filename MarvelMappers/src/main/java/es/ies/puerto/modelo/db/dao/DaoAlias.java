@@ -4,6 +4,7 @@ import es.ies.puerto.abstractas.DaoAbstract;
 import es.ies.puerto.exception.MarvelException;
 import es.ies.puerto.modelo.db.entidades.Alias;
 import es.ies.puerto.modelo.db.entidades.Alias;
+import es.ies.puerto.modelo.db.entidades.Personaje;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -34,6 +35,16 @@ public class DaoAlias extends DaoAbstract {
             }
             return lista.iterator().next();
         }
+
+    public Alias findAlias(Personaje personaje) throws MarvelException {
+        String query = "select p.id, p.alias, p.personaje_id from Alias as p" +
+                " where p.personaje_id='"+personaje.getId()+"'";
+        Set<Alias> lista = obtener(query);
+        if(lista.isEmpty()) {
+            return null;
+        }
+        return lista.iterator().next();
+    }
 
         public boolean updateAlias(Alias alias) throws MarvelException {
 

@@ -2,6 +2,8 @@ package es.ies.puerto.modelo.db.dao;
 
 import es.ies.puerto.abstractas.DaoAbstract;
 import es.ies.puerto.exception.MarvelException;
+import es.ies.puerto.modelo.db.entidades.Alias;
+import es.ies.puerto.modelo.db.entidades.Equipamiento;
 import es.ies.puerto.modelo.db.entidades.Personaje;
 import es.ies.puerto.modelo.db.entidades.Personaje;
 
@@ -61,6 +63,8 @@ public class DaoPersonaje extends DaoAbstract {
 
     private Set<Personaje> obtener(String query) throws MarvelException {
         Set<Personaje> lista = new HashSet<>();
+        DaoAlias daoAlias = new DaoAlias();
+        DaoEquipamiento daoEquipamiento = new DaoEquipamiento();
         Statement statement = null;
         ResultSet rs = null;
         try {
@@ -71,7 +75,10 @@ public class DaoPersonaje extends DaoAbstract {
                 String nombre = rs.getString("nombre");
                 String genero = rs.getString("genero");
 
-                Personaje Personaje = new Personaje(id, nombre,genero,null, null,null);
+                Alias alias = daoAlias.findAlias(new Personaje(id));
+                Set<Equipamiento> equipamientos = daoEquipamiento.findAllEquipamiento(new Personaje(id));
+
+                Personaje Personaje = new Personaje(id, nombre,genero,alias, equipamientos,null);
                 lista.add(Personaje);
             }
         } catch (SQLException exception) {

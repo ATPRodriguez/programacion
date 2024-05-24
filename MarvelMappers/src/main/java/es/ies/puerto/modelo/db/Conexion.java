@@ -19,6 +19,11 @@ public class Conexion extends AppConfig {
 
     public Connection getConexion() throws MarvelException {
         try {
+            Class.forName("org.sqlite.JDBC");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        try {
             this.con = DriverManager.getConnection(url);
         }catch (Exception exception) {
             System.out.println(exception.getMessage());

@@ -13,6 +13,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Path("/alias")
+@Consumes("application/json")
+@Produces("application/json")
 public class AliasService {
     private DaoAlias daoAlias;
 
@@ -25,9 +27,7 @@ public class AliasService {
     }
 
     @GET
-    @Path("/alias/")
-    @Consumes("application/json")
-    @Produces("application/json")
+    @Path("/")
     public Response getAllMarvel() throws MarvelException {
         Set<AliasDTO> alias  = new HashSet<>();
         for (Alias aliasBd : daoAlias.findAllAlias()) {
@@ -37,9 +37,7 @@ public class AliasService {
     }
 
     @GET
-    @Path("/alias/{id}")
-    @Consumes("application/json")
-    @Produces("application/json")
+    @Path("/{id}")
     public Response getMarvelId(@PathParam("id") String id) throws MarvelException {
         AliasDTO alias = IAliasMapper.INSTANCE.aliasToAliasDTO(daoAlias.findAlias(new Alias(id)));
         if (alias != null) {

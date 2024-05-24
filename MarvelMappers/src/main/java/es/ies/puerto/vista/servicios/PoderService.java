@@ -12,6 +12,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Path("/poder")
+@Consumes("application/json")
+@Produces("application/json")
 public class PoderService {
     private DaoPoder daoPoder;
 
@@ -24,9 +26,7 @@ public class PoderService {
     }
 
     @GET
-    @Path("/poder/")
-    @Consumes("application/json")
-    @Produces("application/json")
+    @Path("/")
     public Response getAllMarvel() throws MarvelException {
         Set<PoderDTO> poderes = new HashSet<>();
         for (Poder poderBd : daoPoder.findAllPoder()) {
@@ -36,9 +36,7 @@ public class PoderService {
     }
 
     @GET
-    @Path("/poder/{id}")
-    @Consumes("application/json")
-    @Produces("application/json")
+    @Path("/{id}")
     public Response getMarvelId(@PathParam("id") String id) throws MarvelException {
         PoderDTO poder = IPoderMapper.INSTANCE.poderToPoderDTO(daoPoder.findPoder(new Poder(id)));
         if (poder != null) {

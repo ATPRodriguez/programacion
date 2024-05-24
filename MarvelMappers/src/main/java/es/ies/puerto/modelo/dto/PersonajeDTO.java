@@ -12,7 +12,7 @@ public class PersonajeDTO {
     private String id;
     private String nombre;
     private String genero;
-    private Alias alias;
+    private AliasDTO alias;
     private Set<EquipamientoDTO> equipamientos;
     private Set<PoderDTO> poderes;
 
@@ -27,7 +27,7 @@ public class PersonajeDTO {
         poderes = new HashSet<>();
     }
 
-    public PersonajeDTO(String id, String nombre, String genero, Alias alias, Set<EquipamientoDTO> equipamientos, Set<PoderDTO> poderes) {
+    public PersonajeDTO(String id, String nombre, String genero, AliasDTO alias, Set<EquipamientoDTO> equipamientos, Set<PoderDTO> poderes) {
         this.id = id;
         this.nombre = nombre;
         this.genero = genero;
@@ -60,11 +60,11 @@ public class PersonajeDTO {
         this.genero = genero;
     }
 
-    public Alias getAlias() {
+    public AliasDTO getAlias() {
         return alias;
     }
 
-    public void setAlias(Alias alias) {
+    public void setAlias(AliasDTO alias) {
         this.alias = alias;
     }
 

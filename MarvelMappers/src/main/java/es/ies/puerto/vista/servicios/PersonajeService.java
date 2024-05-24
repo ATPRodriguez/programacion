@@ -3,8 +3,12 @@ package es.ies.puerto.vista.servicios;
 import es.ies.puerto.exception.MarvelException;
 import es.ies.puerto.modelo.db.dao.DaoPersonaje;
 import es.ies.puerto.modelo.db.entidades.Personaje;
+import es.ies.puerto.modelo.dto.EquipamientoDTO;
 import es.ies.puerto.modelo.dto.PersonajeDTO;
+import es.ies.puerto.modelo.dto.PoderDTO;
+import es.ies.puerto.modelo.mapper.struct.IAliasMapper;
 import es.ies.puerto.modelo.mapper.struct.IPersonajeMapper;
+import es.ies.puerto.modelo.mapper.struct.IPoderMapper;
 
 import javax.ws.rs.*;
 import javax.ws.rs.Path;
@@ -13,6 +17,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Path("/personaje")
+@Consumes("application/json")
+@Produces("application/json")
 public class PersonajeService {
     private final DaoPersonaje daoPersonaje;
 
@@ -25,17 +31,23 @@ public class PersonajeService {
     }
 
     @GET
-    @Path("/personaje/")
+    @Path("/")
     public Response getAllMarvel() throws MarvelException {
         Set<PersonajeDTO> personajes = new HashSet<>();
+        Set<PoderDTO> poderes = new HashSet<>();
+        Set< EquipamientoDTO> equipamientos = new HashSet<>();
         for (Personaje personajeBd : daoPersonaje.findAllPersonaje()) {
-            personajes.add(IPersonajeMapper.INSTANCE.personajeToPersonajeDto(personajeBd));
+            PersonajeDTO personajeDTO = IPersonajeMapper.INSTANCE.personajeToPersonajeDto(personajeBd);
+            personajeDTO.setAlias(IAliasMapper.INSTANCE.aliasToAliasDTO(personajeBd.getAlias()));
+            personajeDTO.setPoderes(daoPersonaje.setPoderes);
+            personajes.add(personajeDTO);
+
         }
         return Response.ok(personajes).build();
     }
 
     @GET
-    @Path("/personaje/{id}")
+    @Path("/{id}")
     public Response getMarvelId(@PathParam("id") String id) throws MarvelException {
         PersonajeDTO personaje = IPersonajeMapper.INSTANCE.personajeToPersonajeDto(daoPersonaje.findPersonaje(new Personaje(id)));
         if (personaje != null) {

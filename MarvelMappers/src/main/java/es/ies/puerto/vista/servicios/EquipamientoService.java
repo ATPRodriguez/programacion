@@ -13,6 +13,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Path("/equipamiento")
+@Consumes("application/json")
+@Produces("application/json")
 public class EquipamientoService {
     private DaoEquipamiento daoEquipamiento;
 
@@ -25,9 +27,7 @@ public class EquipamientoService {
     }
 
     @GET
-    @Path("/equipamiento")
-    @Consumes("application/json")
-    @Produces("application/json")
+    @Path("/")
     public Response getAllMarvel() throws MarvelException {
         Set<EquipamientoDTO> equipamiento = new HashSet<>();
         for (Equipamiento equipamientoBd : daoEquipamiento.findAllEquipamiento()) {
@@ -37,9 +37,7 @@ public class EquipamientoService {
     }
 
     @GET
-    @Path("/equipamiento/{id}")
-    @Consumes("application/json")
-    @Produces("application/json")
+    @Path("/{id}")
     public Response getMarvelId (@PathParam("id") String id) throws MarvelException {
         EquipamientoDTO equipamiento = IEquipamientoMapper.INSTANCE.equipamientoToEquipamientoDTO(daoEquipamiento.findEquipamiento(new Equipamiento(id)));
         if (equipamiento != null) {

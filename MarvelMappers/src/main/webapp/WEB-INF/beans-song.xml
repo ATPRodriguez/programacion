@@ -5,9 +5,12 @@
          http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
          http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd">
 
-    <jaxrs:server id="MarvelService" address="/">
+    <jaxrs:server id="MarvelBean" address="/">
         <jaxrs:serviceBeans>
-            <bean id="songsBean" class="es.ies.puerto.services.vista.servicios.PersonajeService"/>
+            <bean id="PersonajeBean" class="es.ies.puerto.vista.servicios.PersonajeService"/>
+            <bean id="AliasBean" class="es.ies.puerto.vista.servicios.AliasService"/>
+            <bean id="EquipamientoBean" class="es.ies.puerto.vista.servicios.EquipamientoService"/>
+            <bean id="PoderBean" class="es.ies.puerto.vista.servicios.PoderService"/>
         </jaxrs:serviceBeans>
 
         <jaxrs:providers>
